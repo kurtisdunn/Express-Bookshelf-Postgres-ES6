@@ -1,4 +1,4 @@
-## ES6-ExpressJS-Demo
+## ES6-ExpressJS-Starter
 ES6 with Grunt, Babel, ExpressJS, SASS &amp; BrowserSync.
 
 
@@ -14,8 +14,8 @@ ES6 with Grunt, Babel, ExpressJS, SASS &amp; BrowserSync.
 
 ```sh
 # clone a copy
-git clone https://github.com/kurtisdunn/ES6-ExpressJS-Demo.git
-cd ES6-ExpressJS-Demo
+git clone https://github.com/kurtisdunn/ES6-ExpressJS-Starter.git
+cd ES6-ExpressJS-Starter
 
 # get it going:
 npm install
