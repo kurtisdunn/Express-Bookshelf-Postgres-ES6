@@ -43,9 +43,4 @@ class Engine extends Model{
  let engine = new Engine('123','BMW','bmw','2','340i', '200478098', 'Piston', 'Front', '2998', 'In-line','6','DOHC with VVT','4','11','B58B30M0','240kW @ 6500rpm', '450Nm @ 1380-5000rpm', '159.8', '5.1');
   console.log(engine);   
   console.log(engine.getEngine());
-//
-// console.log(engine.compressorType); // Toyota Corolla
-// engine.name = 'Ford Mustang';
-// console.log(engine.test()) // Toyota Corolla 2009
-//
 
