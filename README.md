@@ -4,7 +4,7 @@ ES6 with Grunt, Babel, ExpressJS, SASS &amp; BrowserSync.
 
 ### Main Components:
  - Grunt 
- - Babel Transpiler
+ - Babel Compiler
  - ExpressJS
  - SASS
  - BrowserSync
