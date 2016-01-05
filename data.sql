@@ -16,8 +16,6 @@ SET client_min_messages = warning;
 COMMENT ON DATABASE cars IS 'Cars App - ES6 with Grunt, Babel, ExpressJS, SASS, BrowserSync & Postrgesql';
 
 
-
-
 --
 -- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
 --
@@ -347,7 +345,8 @@ ALTER TABLE ONLY model ALTER COLUMN id SET DEFAULT nextval('model_id_seq'::regcl
 --
 
 COPY engine (id, type, location, size, configuration, cylinders, camshaft, "totalValves", compression, "manufacturerEngineCode", torque, pwratio, acceleration, model_id, power) FROM stdin;
-1	Piston	Front	2998	In-line	6	DOHC with VVT	4	11	B58B30M0	450Nm @ 1380-5000rpm	159.8 (W/k	5.1 (s)\r	1	\N
+2	Piston	Mid-Rear	3902	V90	8	DOHC with VVT	4	9.4	F154CB	760Nm @ 3000rpm	340.2 (W/k	3 (s)\t	2	492kW @ 8000rpm
+1	Piston	Front	2998	In-line	6	DOHC with VVT	4	11	B58B30M0	450Nm @ 1380-5000rpm	159.8 (W/k	5.1 (s)\r	1	240kW @ 6500rpm
 \.
 
 
@@ -355,7 +354,7 @@ COPY engine (id, type, location, size, configuration, cylinders, camshaft, "tota
 -- Name: engine_id_seq; Type: SEQUENCE SET; Schema: public; Owner: user
 --
 
-SELECT pg_catalog.setval('engine_id_seq', 1, true);
+SELECT pg_catalog.setval('engine_id_seq', 2, true);
 
 
 --
