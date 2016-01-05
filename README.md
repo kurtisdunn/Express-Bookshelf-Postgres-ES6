@@ -15,7 +15,7 @@ ES6 with Grunt, Babel, Express, Bookshelf.js
 
 
 
-### Usage:
+### Usage
 
 ```sh
 # clone a copy
