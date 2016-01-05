@@ -49,12 +49,12 @@ This build uses Bookshelf.js to persist our data from postgresql, easily mapping
 ```sh
 
   # Model
-  const Make = Bookshelf.Model.extend({
-    tableName: 'make',
-    models: function() {
-      return this.hasMany(Model);
-    }
-  });
+    const Make = Bookshelf.Model.extend({
+      tableName: 'make',
+      models: () => {
+        return this.hasMany(Model);
+      }
+    });
   
   # Query
   Make.where('id', req.params.id).fetch().then((make) => {
