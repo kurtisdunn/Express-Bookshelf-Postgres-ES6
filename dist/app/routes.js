@@ -22,7 +22,9 @@ var routes = function routes(app) {
 
   // Data API
   app.get('/api', _api2.default.base);
+  app.get('/api/make', _api2.default.allMakes);
   app.get('/api/make/:id', _api2.default.makeById);
+  app.get('/api/make/:id/models', _api2.default.allModelsByMake);
 };
 
 exports.routes = routes;

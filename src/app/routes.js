@@ -10,8 +10,9 @@ const routes = (app) => {
   
   // Data API
   app.get('/api', apiController.base)
+  app.get('/api/make', apiController.allMakes)
   app.get('/api/make/:id', apiController.makeById)
-  
+  app.get('/api/make/:id/models', apiController.allModelsByMake)
   
 }
   

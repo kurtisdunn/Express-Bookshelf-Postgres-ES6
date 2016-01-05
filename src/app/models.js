@@ -4,24 +4,24 @@ import {bookshelf as Bookshelf } from './config/persistence';
 
 const Make = Bookshelf.Model.extend({
   tableName: 'make',
-  models: function() {
+  models: () => {
     return this.hasMany(Model);
   }
 });
 
 const Model = Bookshelf.Model.extend({
   tableName: 'model',
-  engines: function() {
+  engines: () => {
     return this.hasMany(Engine);
   }
 });
 
 const Engine = Bookshelf.Model.extend({
   tableName: 'engine',
-  makes: function() {
+  makes: () => {
     return this.belongsToMany(Make);
   },
-  models: function() {
+  models: () => {
     return this.belongsToMany(Model);
   }
 })

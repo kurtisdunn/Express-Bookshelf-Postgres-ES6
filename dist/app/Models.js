@@ -10,24 +10,24 @@ var _persistence = require('./config/persistence');
 var Make = _persistence.bookshelf.Model.extend({
   tableName: 'make',
   models: function models() {
-    return this.hasMany(Model);
+    return undefined.hasMany(Model);
   }
 });
 
 var Model = _persistence.bookshelf.Model.extend({
   tableName: 'model',
   engines: function engines() {
-    return this.hasMany(Engine);
+    return undefined.hasMany(Engine);
   }
 });
 
 var Engine = _persistence.bookshelf.Model.extend({
   tableName: 'engine',
   makes: function makes() {
-    return this.belongsToMany(Make);
+    return undefined.belongsToMany(Make);
   },
   models: function models() {
-    return this.belongsToMany(Model);
+    return undefined.belongsToMany(Model);
   }
 });
 
