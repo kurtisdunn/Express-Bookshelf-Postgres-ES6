@@ -1,7 +1,7 @@
-######DEV BUILD
+> ######  DEV BUILD
 
 ## ES6-ExpressJS-Starter
-ES6 with Grunt, Babel, ExpressJS, SASS &amp; BrowserSync.
+ES6 with Grunt, Babel, Express, Bookshelf.js
 
 
 ### Main Components:
