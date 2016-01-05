@@ -44,10 +44,19 @@ grunt dev
 
 
 ### DB Persistence:
-This build uses Bookshelf.js to persist our data to and from postgresql. Easily mapping table relations in a minimal promise based format. 
+This build uses Bookshelf.js to persist our data from postgresql, easily mapping table relations in a minimal promise based format. 
 
 ```sh
 
+  # Model
+  const Make = Bookshelf.Model.extend({
+    tableName: 'make',
+    models: function() {
+      return this.hasMany(Model);
+    }
+  });
+  
+  # Query
   Make.where('id', req.params.id).fetch().then((make) => {
     res.json(make); 
   }).catch((err) => {
