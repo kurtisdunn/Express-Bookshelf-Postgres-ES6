@@ -65,4 +65,6 @@ Make.where('id', req.params.id).fetch().then((make) => {
 ###Endpoints
 
  - `GET /api` - Returns nothing
- - `GET /api/make/:id` - Query make by ID
+ - `GET /api/make/:id` - Fetch make by id
+ - `GET /api/make/:id/models` - Fetch models by make
+ - `GET /api/models/:id` - Query model by model name

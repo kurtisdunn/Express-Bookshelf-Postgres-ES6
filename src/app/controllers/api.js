@@ -10,21 +10,30 @@ const allMakes = (req, res) => {
     res.json('make'); 
 }
 
-
 const makeById = (req, res) => {
-  Make.where('id', req.params.id).fetch({withRelated: ['make.models']}).then((make) => {
-    res.json(make); 
+  Make.where('id', req.params.id).fetch().then((i) => {
+    i.json(make); 
   }).catch((err) => {
     console.error(err);
   });
 }
 
 const allModelsByMake = (req, res) => {
-  Make.where('id', req.params.id).fetch().then((make) => {
-    res.json(make); 
+  Model.where('make_id', req.params.id).fetch().then((i) => {
+    res.json(i); 
   }).catch((err) => {
     console.error(err);
   });
 }
 
-export default { base, allMakes, makeById, allModelsByMake };
+const getModel = (req, res) => {
+  console.log(req.params.id)
+ 
+  Model.where('model', 'ILIKE', '%' + req.params.id + '%').fetch({withRelated: ['make', 'engine']}).then((i) => {
+    res.json(i); 
+  }).catch((err) => {
+    console.error(err);
+  });
+}
+
+export default { base, allMakes, makeById, allModelsByMake, getModel };

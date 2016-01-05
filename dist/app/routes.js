@@ -25,6 +25,7 @@ var routes = function routes(app) {
   app.get('/api/make', _api2.default.allMakes);
   app.get('/api/make/:id', _api2.default.makeById);
   app.get('/api/make/:id/models', _api2.default.allModelsByMake);
+  app.get('/api/models/:id', _api2.default.getModel);
 };
 
 exports.routes = routes;
