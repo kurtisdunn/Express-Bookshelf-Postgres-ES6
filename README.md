@@ -30,10 +30,8 @@ node dist/server.js
 
 ```
 
+### Development Stuff
 ```sh
-
-## Development Stuff
-
 # Compile ES6 to ES5
 grunt compile
 
@@ -47,21 +45,20 @@ grunt dev
 This build uses Bookshelf.js to persist our data from postgresql, easily mapping table relations in a minimal promise based format. 
 
 ```sh
-
-  # Model
-    const Make = Bookshelf.Model.extend({
-      tableName: 'make',
-      models: () => {
-        return this.hasMany(Model);
-      }
-    });
+# Model
+const Make = Bookshelf.Model.extend({
+  tableName: 'make',
+  models: () => {
+    return this.hasMany(Model);
+  }
+});
   
-  # Query
-  Make.where('id', req.params.id).fetch().then((make) => {
-    res.json(make); 
-  }).catch((err) => {
-    console.error(err);
-  });
+# Query
+Make.where('id', req.params.id).fetch().then((make) => {
+  res.json(make); 
+}).catch((err) => {
+  console.error(err);
+});
   
 ```
 
