@@ -11,18 +11,24 @@
   "dependencies": {
     "babel": "^6.3.26",
     "body-parser": "^1.14.2",
-    "express": "^4.13.3",
     "consolidate": "^0.13.1",
-    "ejs": "^2.3.4"
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "knex": "^0.9.0",
+    "lodash": "^3.10.1",
+    "pg": "^4.4.3"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.3.13",
+    "bookshelf": "^0.9.1",
+    "colors": "^1.1.2",
     "grunt": "^0.4.5",
     "grunt-babel": "^6.0.0",
     "grunt-browser-sync": "^2.2.0",
     "grunt-contrib-copy": "^0.8.2",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-express-server": "^0.5.1",
+    "grunt-nodemon": "^0.4.1",
     "grunt-notify": "^0.4.3",
     "grunt-sass": "^1.1.0",
     "load-grunt-tasks": "^3.4.0",

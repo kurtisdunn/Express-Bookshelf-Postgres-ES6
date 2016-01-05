@@ -70,6 +70,13 @@ module.exports = function(grunt) {
         },
         tasks: ['babel', 'notify:babel']
       },
+      express: {
+          files: ['dist/server.js', 'dist/app/**/*.js'],
+          tasks: ['express:dev'],
+          options: {
+              spawn: false
+          }
+      },
       // scripts: {
       //   files: [
       //     'dist/app/_public/scripts/**/*.js',
@@ -163,13 +170,16 @@ module.exports = function(grunt) {
   grunt.registerTask('dev', 'Start working on this project.', [
     'copy:ejs',
     'babel',
-    'express:dev',
+   // 'express:dev',
     'browserSync',
     'watch',
   ]);
   
   grunt.registerTask('compile', 'Start working on this project.', [
-    'babel'
+    'babel',
+    'watch'
+
+
   ]);
 
   // Build

@@ -20,23 +20,22 @@ var _consolidate = require('consolidate');
 
 var _consolidate2 = _interopRequireDefault(_consolidate);
 
-var _router = require('./app/router');
+var _routes = require('./app/routes');
+
+var _persistence = require('./app/config/persistence');
+
+var _persistence2 = _interopRequireDefault(_persistence);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var app = (0, _express2.default)();
 
-app.engine('ejs', _consolidate2.default.ejs);
-app.set('view engine', 'ejs');
-app.set('views', __dirname + '/app/views');
-app.use(_express2.default.static(__dirname + '/app/_public'));
-app.use((0, _morgan2.default)('dev'));
+app.engine('ejs', _consolidate2.default.ejs).set('view engine', 'ejs').set('views', __dirname + '/app/views').use(_express2.default.static(__dirname + '/app/_public')).use((0, _morgan2.default)('dev'));
 
-(0, _router.routes)(app);
+(0, _routes.routes)(app);
 
 var server = app.listen(3000, function () {
-  var host = server.address().address;
   var port = server.address().port;
-  console.log('Example app listening at http://%s:%s', host, port);
+  console.log('Example app listening at http://localhost:%s', port);
 });
 //# sourceMappingURL=server.js.map

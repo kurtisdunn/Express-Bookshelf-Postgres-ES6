@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -6,29 +6,69 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _persistence = require('../config/persistence');
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Make = (function () {
-  function Make(id, make) {
-    _classCallCheck(this, Make);
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-    this._id = id;
-    this._make = make;
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Pussy = (function (_Bookshelf$Model$exte) {
+  _inherits(Pussy, _Bookshelf$Model$exte);
+
+  function Pussy() {
+    _classCallCheck(this, Pussy);
+
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(Pussy).apply(this, arguments));
   }
 
-  _createClass(Make, [{
-    key: "getMake",
+  _createClass(Pussy, [{
+    key: 'tableName',
+    value: function tableName() {
+      return 'make';
+    }
+  }, {
+    key: 'getMake',
     value: function getMake() {
       var make = {
         id: this._id,
         make: this._make
-
       };
     }
   }]);
 
-  return Make;
-})();
+  return Pussy;
+})(_persistence.bookshelf.Model.extend);
+
+var Make = _persistence.bookshelf.Model.extend({
+  tableName: 'make',
+  models: function models() {
+    return this.hasMany(Model);
+  }
+});
+
+var Model = _persistence.bookshelf.Model.extend({
+  tableName: 'model',
+  engines: function engines() {
+    return this.belongsToMany(Engine);
+  }
+});
+
+var Engine = _persistence.bookshelf.Model.extend({
+  tableName: 'engine',
+  models: function models() {
+    return this.belongsToMany(Model);
+  }
+});
+
+Pussy.where('id', 1).fetch().then(function (user) {
+  console.log('user: ', user);
+  console.log(user.related('models').toJSON());
+}).catch(function (err) {
+
+  console.error(err);
+});
 
 exports.default = Make;
 //# sourceMappingURL=make.js.map
