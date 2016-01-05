@@ -1,3 +1,5 @@
+######DEV BUILD
+
 ## ES6-ExpressJS-Starter
 ES6 with Grunt, Babel, ExpressJS, SASS &amp; BrowserSync.
 
@@ -5,9 +7,12 @@ ES6 with Grunt, Babel, ExpressJS, SASS &amp; BrowserSync.
 ### Main Components:
  - Grunt 
  - Babel Compiler
- - ExpressJS
+ - Express
+ - Bookshelf.js
  - SASS
  - BrowserSync
+
+
 
 
 ### Usage:
@@ -38,7 +43,20 @@ grunt dev
 ```
 
 
-### TODO:
- - Add test suite to classes.
- - Finish Controllers.
- - Figure out best practice for ES6 database persistence. Knex.js?
+### DB Persistence:
+This build uses Bookshelf.js to persist our data to and from postgresql. Easily mapping table relations in a minimal promise based format. 
+
+```sh
+
+  Make.where('id', req.params.id).fetch().then((make) => {
+    res.json(make); 
+  }).catch((err) => {
+    console.error(err);
+  });
+  
+```
+
+###Endpoints
+
+ - `GET /api` - Returns nothing
+ - `GET /api/make/:id` - Query make by ID
