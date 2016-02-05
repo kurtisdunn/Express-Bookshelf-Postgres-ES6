@@ -1,7 +1,7 @@
 > ######  DEV BUILD
 
-## ES6-ExpressJS-Starter
-ES6 with Grunt, Babel, Express, Bookshelf.js
+## Express Bookshelf Postgres ES6
+Express, Bookshelf.js & Postgres. ES6 style using Babel. 
 
 
 ### Main Components:
@@ -13,13 +13,11 @@ ES6 with Grunt, Babel, Express, Bookshelf.js
  - BrowserSync
 
 
-
-
 ### Usage
 
 ```sh
 # clone a copy
-git clone https://github.com/kurtisdunn/ES6-ExpressJS-Starter.git
+git clone https://github.com/kurtisdunn/Express-Bookshelf-Postgres-ES6.git
 cd ES6-ExpressJS-Starter
 
 # get it going:
